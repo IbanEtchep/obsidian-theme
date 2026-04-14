@@ -10,7 +10,7 @@
         </div>
         <div class="lootlog-xp">
             <span class="lootlog-xp-val">{{ $currentAmount }}</span>
-            <span class="lootlog-xp-label">votes</span>
+            <span class="lootlog-xp-label">{{ trans('theme::messages.common.votes') }}</span>
         </div>
     </div>
 
@@ -57,7 +57,7 @@
                 <div class="lootlog-card">
                     <div class="lootlog-card-top">
                         <span class="lootlog-card-name">{{ $tier->name }}</span>
-                        <span class="lootlog-card-req">{{ $tier->amount }} votes</span>
+                        <span class="lootlog-card-req">{{ $tier->amount }} {{ trans('theme::messages.common.votes') }}</span>
                     </div>
 
                     @if($tier->description)

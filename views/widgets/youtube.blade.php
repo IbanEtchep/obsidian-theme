@@ -29,7 +29,7 @@
                     @else
                         <div class="obsidian-yt-empty">
                             <i class="bi bi-play-circle"></i>
-                            <p>Configurez l'ID de la vidéo YouTube dans l'éditeur.</p>
+                            <p>{{ trans('theme::messages.common.configure_youtube') }}</p>
                         </div>
                     @endif
                 </div>

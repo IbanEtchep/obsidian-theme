@@ -62,8 +62,7 @@
                             <li><a href="{{ $link['url'] }}">{{ $link['name'] }}</a></li>
                         @endif
                     @empty
-                        <li><a href="#">Mentions légales</a></li>
-                        <li><a href="#">CGV</a></li>
+                        <li><a href="#">{{ trans('theme::messages.common.legal_notices') }}</a></li>
                     @endforelse
                 </ul>
             </div>

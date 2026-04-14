@@ -24,7 +24,7 @@
             </div>
         @endforeach
         @if($votes->isEmpty())
-            <div class="p-4 text-center" style="color:var(--obsidian-text-dim)">Aucun vote pour le moment.</div>
+            <div class="p-4 text-center" style="color:var(--obsidian-text-dim)">{{ trans('theme::messages.common.no_votes_yet') }}</div>
         @endif
     </div>
 </div>

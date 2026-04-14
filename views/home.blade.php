@@ -67,7 +67,7 @@
                 'cta' => ['anchor' => '', 'title' => '', 'subtitle' => '', 'button_text' => '', 'button_url' => ''],
                 'join' => ['anchor' => '', 'title' => '', 'step_1' => '', 'step_2' => '', 'step_3' => '', 'server_ip' => ''],
                 'youtube' => ['anchor' => '', 'title' => '', 'subtitle' => '', 'video_id' => ''],
-                'custom' => ['anchor' => '', 'title' => '', 'content' => '<p>Nouveau contenu</p>'],
+                'custom' => ['anchor' => '', 'title' => '', 'content' => '<p>' . trans('theme::messages.common.new_content') . '</p>'],
             ];
         @endphp
         @php

@@ -35,7 +35,7 @@
         <div class="obsidian-reveal">
             <h2 class="fw-bold mb-3" data-field="title">{{ $sectionTitle }}</h2>
             <p class="text-body-secondary" data-field="subtitle">{{ $sectionSubtitle }}</p>
-            <p class="text-muted"><i class="bi bi-info-circle"></i> Configurez l'ID du serveur Discord dans l'éditeur.</p>
+            <p class="text-muted"><i class="bi bi-info-circle"></i> {{ trans('theme::messages.common.configure_discord') }}</p>
         </div>
     </div>
 </section>

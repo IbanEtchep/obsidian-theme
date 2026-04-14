@@ -55,7 +55,7 @@
                     @if($heroIp)
                         <div class="obsidian-hero-ip" onclick="obsidianCopyHeroIp(this)">
                             <code id="obsidian-hero-ip-value">{{ $heroIp }}</code>
-                            <span class="obsidian-hero-ip-copy" title="Copier">
+                            <span class="obsidian-hero-ip-copy" title="{{ trans('theme::messages.common.copy') }}">
                                 <i class="bi bi-clipboard"></i>
                             </span>
                         </div>

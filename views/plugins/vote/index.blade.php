@@ -100,19 +100,19 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content obsidian-modal">
                     <div class="modal-header">
-                        <h5 class="modal-title fw-bold"><i class="bi bi-plus-circle me-2"></i>Ajouter un widget</h5>
+                        <h5 class="modal-title fw-bold"><i class="bi bi-plus-circle me-2"></i>{{ trans('theme::messages.common.add_widget') }}</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
                         <div class="row g-3" id="obsidian-catalog-grid">
                             @php
                                 $voteWidgetTypes = [
-                                    'vote/panel' => ['icon' => 'bi-star-fill', 'color' => '#6366f1', 'label' => 'Voter'],
-                                    'vote/steps-h' => ['icon' => 'bi-calendar-check-fill', 'color' => '#fbbf24', 'label' => 'Paliers (horizontal)'],
-                                    'vote/steps-v' => ['icon' => 'bi-calendar-check-fill', 'color' => '#f59e0b', 'label' => 'Paliers (vertical)'],
-                                    'vote/leaderboard' => ['icon' => 'bi-trophy-fill', 'color' => '#22c55e', 'label' => 'Classement'],
-                                    'vote/goal' => ['icon' => 'bi-bullseye', 'color' => '#06b6d4', 'label' => 'Objectif'],
-                                    'vote/rewards' => ['icon' => 'bi-gift-fill', 'color' => '#ec4899', 'label' => 'Récompenses'],
+                                    'vote/panel' => ['icon' => 'bi-star-fill', 'color' => '#6366f1', 'label' => trans('theme::messages.widgets.vote_panel')],
+                                    'vote/steps-h' => ['icon' => 'bi-calendar-check-fill', 'color' => '#fbbf24', 'label' => trans('theme::messages.widgets.vote_steps_h')],
+                                    'vote/steps-v' => ['icon' => 'bi-calendar-check-fill', 'color' => '#f59e0b', 'label' => trans('theme::messages.widgets.vote_steps_v')],
+                                    'vote/leaderboard' => ['icon' => 'bi-trophy-fill', 'color' => '#22c55e', 'label' => trans('theme::messages.widgets.vote_leaderboard')],
+                                    'vote/goal' => ['icon' => 'bi-bullseye', 'color' => '#06b6d4', 'label' => trans('theme::messages.widgets.vote_goal')],
+                                    'vote/rewards' => ['icon' => 'bi-gift-fill', 'color' => '#ec4899', 'label' => trans('theme::messages.widgets.vote_rewards')],
                                 ];
                             @endphp
                             @foreach($voteWidgetTypes as $type => $meta)

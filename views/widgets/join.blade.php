@@ -31,22 +31,22 @@
             {{-- IP Copy box --}}
             <div class="col-lg-6">
                 <div class="obsidian-ip-box obsidian-reveal">
-                    <div class="obsidian-ip-label">Adresse du serveur</div>
+                    <div class="obsidian-ip-label">{{ trans('theme::messages.common.server_ip') }}</div>
                     <div class="obsidian-ip-row">
                         <code class="obsidian-ip-value" id="obsidian-server-ip">{{ $serverIp }}</code>
-                        <button type="button" class="obsidian-ip-copy" onclick="obsidianCopyIp()" title="Copier">
+                        <button type="button" class="obsidian-ip-copy" onclick="obsidianCopyIp()" title="{{ trans('theme::messages.common.copy') }}">
                             <i class="bi bi-clipboard" id="obsidian-copy-icon"></i>
                         </button>
                     </div>
                     <div class="obsidian-ip-copied d-none" id="obsidian-ip-copied">
-                        <i class="bi bi-check-circle-fill me-1"></i> Copié !
+                        <i class="bi bi-check-circle-fill me-1"></i> {{ trans('theme::messages.common.copied') }}
                     </div>
                 </div>
 
                 @if($server && $server->join_url)
                     <div class="text-center mt-3 obsidian-reveal">
                         <a href="{{ $server->join_url }}" class="btn btn-primary btn-lg obsidian-btn-glow">
-                            <i class="bi bi-play-fill me-1"></i> Rejoindre
+                            <i class="bi bi-play-fill me-1"></i> {{ trans('theme::messages.common.join_server') }}
                         </a>
                     </div>
                 @endif

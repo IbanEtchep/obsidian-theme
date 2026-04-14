@@ -13,9 +13,9 @@
                 {{-- Populated dynamically by editor.js --}}
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">{{ trans('theme::messages.common.cancel') }}</button>
                 <button type="button" class="btn btn-sm btn-primary" id="obsidian-modal-apply">
-                    <i class="bi bi-check-lg me-1"></i> Appliquer
+                    <i class="bi bi-check-lg me-1"></i> {{ trans('theme::messages.common.apply') }}
                 </button>
             </div>
         </div>

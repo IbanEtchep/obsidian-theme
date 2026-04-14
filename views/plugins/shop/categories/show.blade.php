@@ -46,7 +46,7 @@
                                 <div class="sv-item-placeholder"><i class="bi bi-box-seam"></i></div>
                             @endif
                             @if($package->isDiscounted())
-                                <span class="sv-item-badge">PROMO</span>
+                                <span class="sv-item-badge">{{ strtoupper(trans('theme::messages.common.promo')) }}</span>
                             @endif
                         </div>
                         <div class="sv-item-body">
