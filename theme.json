@@ -1,0 +1,11 @@
+{
+    "id": "obsidian",
+    "name": "Obsidian",
+    "version": "1.0.0",
+    "description": "A premium dark gaming theme with visual drag-and-drop editor.",
+    "url": "",
+    "authors": [
+        "Iban"
+    ],
+    "azuriom_api": "1.2.0"
+}
