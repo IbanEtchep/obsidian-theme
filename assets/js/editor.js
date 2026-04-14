@@ -295,7 +295,8 @@ var ObsidianEditor = {
 
     /* ========== DELETE WIDGET ========== */
     deleteWidget: function (widgetId) {
-        if (!confirm(document.documentElement.lang === 'fr' ? 'Supprimer ce widget ?' : 'Delete this widget?')) return;
+        var confirmMsg = (window.obsidianI18n && window.obsidianI18n.delete_confirm) || 'Delete this widget?';
+        if (!confirm(confirmMsg)) return;
 
         // Remove from state
         this.state.sections = this.state.sections.filter(function (s) { return s.id !== widgetId; });
@@ -756,42 +757,46 @@ var ObsidianEditor = {
     },
 
     getFieldLabels: function (type) {
-        var anchorLabel = 'Ancre (ex: rejoindre → lien #rejoindre)';
+        var f = (window.obsidianI18n && window.obsidianI18n.fields) || {};
+        var featLabel = function (baseKey, n) {
+            return (f[baseKey] || baseKey).replace(':n', n);
+        };
         var labels = {
-            hero: { anchor: anchorLabel, logo_url: 'URL du logo (vide = logo du site)', logo_size: 'Taille du logo en px (ex: 120, 200, 300)', title: 'Titre', subtitle: 'Sous-titre', button_text: 'Texte du bouton', button_url: 'URL du bouton', server_ip: 'Adresse IP du serveur' },
+            hero: { anchor: f.anchor, logo_url: f.logo_url, logo_size: f.logo_size, title: f.title, subtitle: f.subtitle, button_text: f.button_text, button_url: f.button_url, server_ip: f.server_ip },
             features: {
-                anchor: anchorLabel, title: 'Titre de la section',
-                feature_1_icon: 'Icône 1 (classe Bootstrap Icons)', feature_1_title: 'Titre 1', feature_1_desc: 'Description 1',
-                feature_2_icon: 'Icône 2', feature_2_title: 'Titre 2', feature_2_desc: 'Description 2',
-                feature_3_icon: 'Icône 3', feature_3_title: 'Titre 3', feature_3_desc: 'Description 3'
+                anchor: f.anchor, title: f.section_title,
+                feature_1_icon: featLabel('feature_icon', 1), feature_1_title: featLabel('feature_title', 1), feature_1_desc: featLabel('feature_desc', 1),
+                feature_2_icon: featLabel('feature_icon', 2), feature_2_title: featLabel('feature_title', 2), feature_2_desc: featLabel('feature_desc', 2),
+                feature_3_icon: featLabel('feature_icon', 3), feature_3_title: featLabel('feature_title', 3), feature_3_desc: featLabel('feature_desc', 3)
             },
-            servers: { anchor: anchorLabel, title: 'Titre de la section' },
-            news: { anchor: anchorLabel, title: 'Titre de la section' },
-            discord: { anchor: anchorLabel, title: 'Titre', subtitle: 'Sous-titre', discord_id: 'ID du serveur Discord' },
-            cta: { anchor: anchorLabel, title: 'Titre', subtitle: 'Sous-titre', button_text: 'Texte du bouton', button_url: 'URL du bouton' },
-            join: { anchor: anchorLabel, title: 'Titre', step_1: 'Étape 1', step_2: 'Étape 2', step_3: 'Étape 3', server_ip: 'Adresse IP du serveur' },
-            youtube: { anchor: anchorLabel, title: 'Titre', subtitle: 'Sous-titre', video_id: 'ID vidéo YouTube (ex: dQw4w9WgXcQ)' },
-            custom: { title: 'Titre', content: 'Contenu HTML' },
-            'vote/panel': { title: 'Titre' },
-            'vote/leaderboard': { title: 'Titre' },
-            'vote/goal': { title: 'Titre' },
-            'vote/rewards': { title: 'Titre' },
-            'vote/steps-h': { title: 'Titre' },
-            'vote/steps-v': { title: 'Titre' }
+            servers: { anchor: f.anchor, title: f.section_title },
+            news: { anchor: f.anchor, title: f.section_title },
+            discord: { anchor: f.anchor, title: f.title, subtitle: f.subtitle, discord_id: f.discord_id },
+            cta: { anchor: f.anchor, title: f.title, subtitle: f.subtitle, button_text: f.button_text, button_url: f.button_url },
+            join: { anchor: f.anchor, title: f.title, step_1: featLabel('step', 1), step_2: featLabel('step', 2), step_3: featLabel('step', 3), server_ip: f.server_ip },
+            youtube: { anchor: f.anchor, title: f.title, subtitle: f.subtitle, video_id: f.video_id },
+            custom: { title: f.title, content: f.content },
+            'vote/panel': { title: f.title },
+            'vote/leaderboard': { title: f.title },
+            'vote/goal': { title: f.title },
+            'vote/rewards': { title: f.title },
+            'vote/steps-h': { title: f.title },
+            'vote/steps-v': { title: f.title }
         };
         return labels[type] || {};
     },
 
     getWidgetLabel: function (type) {
-        var names = {
-            hero: 'Hero Banner', features: 'Features', servers: 'Serveurs',
-            news: 'Actualités', discord: 'Discord', cta: 'Call to Action',
-            join: 'Rejoindre le serveur', youtube: 'Vidéo YouTube', custom: 'HTML personnalisé',
-            'vote/panel': 'Voter', 'vote/leaderboard': 'Classement',
-            'vote/goal': 'Objectif', 'vote/rewards': 'Récompenses',
-            'vote/steps-h': 'Paliers (horizontal)', 'vote/steps-v': 'Paliers (vertical)'
+        var w = (window.obsidianI18n && window.obsidianI18n.widgets) || {};
+        var map = {
+            'hero': w.hero, 'features': w.features, 'servers': w.servers,
+            'news': w.news, 'discord': w.discord, 'cta': w.cta,
+            'join': w.join, 'youtube': w.youtube, 'custom': w.custom,
+            'vote/panel': w.vote_panel, 'vote/leaderboard': w.vote_leaderboard,
+            'vote/goal': w.vote_goal, 'vote/rewards': w.vote_rewards,
+            'vote/steps-h': w.vote_steps_h, 'vote/steps-v': w.vote_steps_v
         };
-        return names[type] || type;
+        return map[type] || type;
     }
 };
 

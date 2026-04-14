@@ -146,6 +146,14 @@
             window.obsidianConfig = @json($voteConfig);
             window.obsidianWidgetDefaults = @json($voteWidgetDefaults);
             window.obsidianConfigKey = 'vote_sections';
+            @php
+                $voteI18n = [
+                    'fields' => trans('theme::messages.fields'),
+                    'widgets' => trans('theme::messages.widgets'),
+                    'delete_confirm' => trans('theme::messages.editor.delete_confirm'),
+                ];
+            @endphp
+            window.obsidianI18n = @json($voteI18n);
             window.obsidianHasZones = true;
         </script>
         <script src="{{ theme_asset('js/vendor/Sortable.min.js') }}" defer></script>

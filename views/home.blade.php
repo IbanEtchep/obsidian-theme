@@ -70,8 +70,16 @@
                 'custom' => ['anchor' => '', 'title' => '', 'content' => '<p>Nouveau contenu</p>'],
             ];
         @endphp
+        @php
+            $obsidianI18n = [
+                'fields' => trans('theme::messages.fields'),
+                'widgets' => trans('theme::messages.widgets'),
+                'delete_confirm' => trans('theme::messages.editor.delete_confirm'),
+            ];
+        @endphp
         <script>window.obsidianConfig = @json($themeConfig);</script>
         <script>window.obsidianWidgetDefaults = @json($widgetDefaults);</script>
+        <script>window.obsidianI18n = @json($obsidianI18n);</script>
         <script src="{{ theme_asset('js/vendor/Sortable.min.js') }}" defer></script>
         <script src="{{ theme_asset('js/editor.js') }}" defer></script>
         <link href="{{ theme_asset('css/editor.css') }}" rel="stylesheet">

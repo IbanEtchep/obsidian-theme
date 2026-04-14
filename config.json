@@ -1,12 +1,12 @@
 {
     "colors": {
-        "primary": "#d07f5d",
-        "secondary": "#8b5cf6",
-        "accent": "#06b6d4",
-        "navbar": "#0f172a",
-        "footer": "#0f172a",
-        "hero_start": "#110826",
-        "hero_end": "#312e81"
+        "primary": "#f59e0b",
+        "secondary": "#d97706",
+        "accent": "#fbbf24",
+        "navbar": "#1c1917",
+        "footer": "#1c1917",
+        "hero_start": "#1c1917",
+        "hero_end": "#451a03"
     },
     "sections": [
         {
@@ -17,12 +17,13 @@
             "visible": "1",
             "data": {
                 "anchor": null,
-                "logo_url": "https://spartacube.fr/storage/img/logo.webp",
-                "title": "Bienvenue sur Spartacube",
-                "subtitle": "Rejoins notre communaut\u00e9 et b\u00e2tis ton empire !",
-                "button_text": "Commencer \u00e0 jouer",
-                "button_url": "#rejoindre",
-                "logo_size": "500"
+                "logo_url": null,
+                "logo_size": "160",
+                "title": null,
+                "subtitle": null,
+                "button_text": null,
+                "button_url": "#join",
+                "server_ip": null
             },
             "settings": {
                 "show_player_count": "1",
@@ -37,16 +38,27 @@
             "visible": "1",
             "data": {
                 "anchor": null,
-                "title": "Pourquoi nous choisir ?",
+                "title": null,
                 "feature_1_icon": "bi bi-lightning-charge-fill",
-                "feature_1_title": "Performances",
-                "feature_1_desc": "Des serveurs optimis\u00e9s pour une exp\u00e9rience sans lag.",
+                "feature_1_title": null,
+                "feature_1_desc": null,
                 "feature_2_icon": "bi bi-shield-fill-check",
-                "feature_2_title": "S\u00e9curit\u00e9",
-                "feature_2_desc": "Une \u00e9quipe de mod\u00e9ration au top !",
+                "feature_2_title": null,
+                "feature_2_desc": null,
                 "feature_3_icon": "bi bi-people-fill",
-                "feature_3_title": "Communaut\u00e9",
-                "feature_3_desc": "Une communaut\u00e9 active et bienveillante :))"
+                "feature_3_title": null,
+                "feature_3_desc": null
+            }
+        },
+        {
+            "id": "servers-1",
+            "type": "servers",
+            "zone": "main",
+            "order": "2",
+            "visible": "1",
+            "data": {
+                "anchor": null,
+                "title": null
             }
         },
         {
@@ -56,11 +68,11 @@
             "order": "3",
             "visible": "1",
             "data": {
-                "anchor": "rejoindre",
-                "title": "Pr\u00eat \u00e0 rejoindre l'aventure ?",
-                "step_1": "Ouvre Minecraft et clique sur \"Multijoueur\".",
-                "step_2": "Clique sur \"Ajouter un serveur\" et colle l'adresse ci-contre.",
-                "step_3": "Connecte-toi et amuse-toi !",
+                "anchor": "join",
+                "title": null,
+                "step_1": null,
+                "step_2": null,
+                "step_3": null,
                 "server_ip": null
             }
         },
@@ -76,115 +88,85 @@
             }
         },
         {
-            "id": "youtube-1776174269313",
-            "type": "youtube",
+            "id": "cta-1",
+            "type": "cta",
             "zone": "main",
-            "order": "2",
+            "order": "5",
             "visible": "1",
             "data": {
                 "anchor": null,
-                "title": "Trailer",
+                "title": null,
                 "subtitle": null,
-                "video_id": "2b5LEAbdJYs"
+                "button_text": null,
+                "button_url": null
             }
         }
     ],
-    "vote": {
-        "steps_variant": "horizontal",
-        "steps_title": "",
-        "vote_title": "",
-        "leaderboard_title": "",
-        "rewards_title": "",
-        "goal_title": ""
+    "footer": {
+        "description": "",
+        "links_title": "",
+        "social_title": "",
+        "legal_title": "Legal",
+        "links": [],
+        "legal_links": []
     },
-    "append": "true",
     "vote_layout": "sidebar-left",
     "vote_sections": [
         {
             "id": "vpanel-1",
             "type": "vote/panel",
             "zone": "sidebar",
-            "order": "0",
-            "visible": "1",
+            "order": 0,
+            "visible": true,
             "data": {
-                "title": null
-            }
-        },
-        {
-            "id": "vsteps-h-1",
-            "type": "vote/steps-h",
-            "zone": "main",
-            "order": "0",
-            "visible": "1",
-            "data": {
-                "title": "R\u00e9compenses mensuelles par palier"
-            }
+                "title": ""
+            },
+            "settings": []
         },
         {
             "id": "vgoal-1",
             "type": "vote/goal",
             "zone": "sidebar",
-            "order": "1",
-            "visible": "1",
+            "order": 1,
+            "visible": true,
             "data": {
-                "title": null
-            }
-        },
-        {
-            "id": "vleaderboard-1",
-            "type": "vote/leaderboard",
-            "zone": "main",
-            "order": "1",
-            "visible": "1",
-            "data": {
-                "title": null
-            }
+                "title": ""
+            },
+            "settings": []
         },
         {
             "id": "vrewards-1",
             "type": "vote/rewards",
             "zone": "sidebar",
-            "order": "2",
-            "visible": "1",
+            "order": 2,
+            "visible": true,
             "data": {
-                "title": null
-            }
+                "title": ""
+            },
+            "settings": []
         },
         {
-            "id": "vote/goal-1776106619610",
-            "type": "vote/goal",
+            "id": "vsteps-h-1",
+            "type": "vote/steps-h",
             "zone": "main",
-            "order": "2",
-            "visible": "1",
+            "order": 0,
+            "visible": true,
             "data": {
-                "title": null
-            }
+                "title": ""
+            },
+            "settings": []
         },
         {
-            "id": "vote/steps-v-1776177529834",
-            "type": "vote/steps-v",
-            "zone": "sidebar",
-            "order": "3",
-            "visible": "1",
+            "id": "vleaderboard-1",
+            "type": "vote/leaderboard",
+            "zone": "main",
+            "order": 1,
+            "visible": true,
             "data": {
-                "title": null
-            }
+                "title": ""
+            },
+            "settings": []
         }
     ],
-    "footer": {
-        "description": "SpartaCube est un serveur Minecraft survie \u00e0 jour, offrant une exp\u00e9rience compl\u00e8te avec \u00e9conomie, guildes, shops joueurs, m\u00e9tiers et de nombreux ajouts pour enrichir votre aventure.",
-        "links_title": null,
-        "social_title": null,
-        "legal_title": null,
-        "legal_links": [
-            {
-                "name": "Mentions l\u00e9gales - CGV",
-                "url": "cgv"
-            },
-            {
-                "name": "Politique de confidentialit\u00e9",
-                "url": "politique-confidentialite"
-            }
-        ]
-    }
+    "append": "true"
 }
